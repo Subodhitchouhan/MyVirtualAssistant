@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
-  "author": "ayush sahu",
+  "author": "subodhit chouhan",
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "dependencies": {
