@@ -11,7 +11,7 @@ import geminiResponse from "./gemini.js"
 
 const app=express()
 app.use(cors({
-    origin:"ourvirtualassistant.netlify.app",
+    origin:"https://ourvirtualassistant.netlify.app",
     credentials:true
 }))
 const port=process.env.PORT || 5000
