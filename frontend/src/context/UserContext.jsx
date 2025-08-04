@@ -22,9 +22,10 @@ try {
   const result=await axios.post(`${serverUrl}/api/user/asktoassistant`,{command},{withCredentials:true})
   return result.data
 } catch (error) {
-  console.log(error)
-}
-    }
+    console.error("Gemini API Error:", error.response?.data || error.message);
+    return null;
+  }
+};
 
     useEffect(()=>{
 handleCurrentUser()

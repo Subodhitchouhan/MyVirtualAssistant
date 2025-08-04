@@ -169,10 +169,16 @@ useEffect(() => {
       recognition.stop();
       isRecognizingRef.current = false;
       setListening(false);
+      
       const data = await getGeminiResponse(transcript);
-      handleCommand(data);
-      setAiText(data.response);
-      setUserText("");
+
+        if (data && typeof data === 'object') {
+          handleCommand(data);
+          setAiText(data.response || "No response received.");
+        } else {
+          console.error("getGeminiResponse returned invalid or empty data:", data);
+          setAiText("Sorry, I couldn't understand that.");
+        }
     }
   };
 
